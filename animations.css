@@ -1,0 +1,140 @@
+/* ===== ANIMATION STYLES ===== */
+
+/* Floating Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+/* SVG and Image Animations */
+.social-connect-image,
+.logo-illustration,
+.contact-image,
+.profile-image-wrapper {
+    animation: float 3s ease-in-out infinite;
+}
+
+#server-unit {
+    animation: pulse 4s ease-in-out infinite;
+}
+
+/* Global Transitions */
+a,
+body {
+    transition: all 0.3s ease;
+}
+
+/* Theme Transition */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Component Transitions */
+.skills-list li,
+.social-link,
+.theme-toggle,
+.contact-btn,
+.cert-link,
+.submit-btn,
+.contact-form,
+.form-group input,
+.form-group textarea,
+.skill-card,
+.service-card,
+.blog-card,
+.contact-button,
+.mobile-menu-toggle span {
+    transition: all 0.3s ease;
+}
+
+/* Hover Effects */
+.skills-list li:hover,
+.skill-card:hover,
+.service-card:hover,
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--card-shadow-hover);
+}
+
+.social-link:hover,
+.theme-toggle:hover,
+.contact-btn:hover,
+.contact-button:hover,
+.hero .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cert-link:hover,
+.submit-btn:hover,
+.read-more:hover {
+    transform: translateY(-2px);
+}
+
+/* Form Focus Effects */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--highlight-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(139, 69, 19, 0.2);
+}
+
+/* SVG Element Transitions */
+svg line,
+svg path,
+svg circle {
+    transition: all 0.3s ease;
+}
+
+svg:hover line,
+svg:hover path {
+    stroke-width: 4px;
+}
+
+svg:hover circle {
+    transform: scale(1.1);
+}
+
+/* Button Animation */
+.btn {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+/* Mobile Menu Animation */
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}

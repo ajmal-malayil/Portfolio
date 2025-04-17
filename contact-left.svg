@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+    <!-- Background with animation -->
+    <rect width="800" height="600" fill="#f8f9fa" opacity="0.1">
+        <animate attributeName="opacity" values="0.08;0.12;0.08" dur="5s" repeatCount="indefinite" />
+    </rect>
+    
+    <!-- Server Rack with animation -->
+    <g transform="translate(100, 150)">
+        <rect x="0" y="0" width="200" height="300" rx="10" fill="#e9ecef" stroke="#8B4513" stroke-width="2">
+            <animate attributeName="y" values="0;-3;0" dur="4s" repeatCount="indefinite" />
+        </rect>
+        <!-- Server Units with animation -->
+        <g id="server-unit">
+            <rect x="20" y="30" width="160" height="40" rx="5" fill="#8B4513" opacity="0.9">
+                <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" />
+            </rect>
+            <circle cx="160" cy="50" r="3" fill="#00ff00">
+                <animate attributeName="fill" values="#00ff00;#00cc00;#00ff00" dur="2s" repeatCount="indefinite" />
+            </circle>
+            <rect x="20" y="90" width="160" height="40" rx="5" fill="#8B4513" opacity="0.8">
+                <animate attributeName="opacity" values="0.7;0.9;0.7" dur="3s" repeatCount="indefinite" begin="0.5s" />
+            </rect>
+            <circle cx="160" cy="110" r="3" fill="#00ff00">
+                <animate attributeName="fill" values="#00ff00;#00cc00;#00ff00" dur="2s" repeatCount="indefinite" begin="0.5s" />
+            </circle>
+            <rect x="20" y="150" width="160" height="40" rx="5" fill="#8B4513" opacity="0.7">
+                <animate attributeName="opacity" values="0.6;0.8;0.6" dur="3s" repeatCount="indefinite" begin="1s" />
+            </rect>
+            <circle cx="160" cy="170" r="3" fill="#00ff00">
+                <animate attributeName="fill" values="#00ff00;#00cc00;#00ff00" dur="2s" repeatCount="indefinite" begin="1s" />
+            </circle>
+        </g>
+    </g>
+    
+    <!-- Cloud Symbol with animation -->
+    <g transform="translate(400, 100)">
+        <path d="M120,80 C120,44.77 91.23,16 56,16 C20.77,16 -8,44.77 -8,80 C-8,115.23 20.77,144 56,144 C91.23,144 120,115.23 120,80 Z" fill="#8B4513" opacity="0.6">
+            <animate attributeName="opacity" values="0.5;0.7;0.5" dur="5s" repeatCount="indefinite" />
+        </path>
+        <path d="M100,60 C100,24.77 71.23,-4 36,-4 C0.77,-4 -28,24.77 -28,60 C-28,95.23 0.77,124 36,124 C71.23,124 100,95.23 100,60 Z" fill="#8B4513" opacity="0.4">
+            <animate attributeName="opacity" values="0.3;0.5;0.3" dur="5s" repeatCount="indefinite" begin="1s" />
+        </path>
+    </g>
+    
+    <!-- Network Lines with animation -->
+    <g stroke="#8B4513" stroke-width="2" opacity="0.5">
+        <path d="M300,300 Q400,200 500,300" fill="none">
+            <animate attributeName="stroke-width" values="1.5;2.5;1.5" dur="4s" repeatCount="indefinite" />
+        </path>
+        <path d="M500,300 Q600,400 700,300" fill="none">
+            <animate attributeName="stroke-width" values="1.5;2.5;1.5" dur="4s" repeatCount="indefinite" begin="1s" />
+        </path>
+        <path d="M300,350 Q400,450 500,350" fill="none">
+            <animate attributeName="stroke-width" values="1.5;2.5;1.5" dur="4s" repeatCount="indefinite" begin="2s" />
+        </path>
+    </g>
+    
+    <!-- Call to Action Text -->
+    <g transform="translate(400, 500)">
+        <text text-anchor="middle" font-family="Arial" font-size="24" fill="#8B4513" font-weight="bold">Let's Build Your IT Infrastructure</text>
+        <text text-anchor="middle" font-family="Arial" font-size="16" fill="#8B4513" y="30">Reach out for professional consultation</text>
+    </g>
+    
+    <!-- Decorative Elements with animation -->
+    <g fill="#8B4513" opacity="0.2">
+        <circle cx="650" cy="150" r="5">
+            <animate attributeName="r" values="4;6;4" dur="3s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="670" cy="170" r="3">
+            <animate attributeName="r" values="2;4;2" dur="3s" repeatCount="indefinite" begin="0.5s" />
+        </circle>
+        <circle cx="630" cy="160" r="4">
+            <animate attributeName="r" values="3;5;3" dur="3s" repeatCount="indefinite" begin="1s" />
+        </circle>
+        <circle cx="150" cy="500" r="5">
+            <animate attributeName="r" values="4;6;4" dur="3s" repeatCount="indefinite" begin="1.5s" />
+        </circle>
+        <circle cx="170" cy="520" r="3">
+            <animate attributeName="r" values="2;4;2" dur="3s" repeatCount="indefinite" begin="2s" />
+        </circle>
+        <circle cx="130" cy="510" r="4">
+            <animate attributeName="r" values="3;5;3" dur="3s" repeatCount="indefinite" begin="2.5s" />
+        </circle>
+    </g>
+</svg>

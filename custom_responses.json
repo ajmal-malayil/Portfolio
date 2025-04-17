@@ -1,0 +1,16 @@
+{
+    "technical_skills": {
+        "patterns": ["programming languages", "tech stack", "coding", "development skills", "software"],
+        "responses": [
+            "I specialize in several programming languages and technologies including:\n- JavaScript/Node.js\n- Python\n- React\n- HTML/CSS\n- SQL and NoSQL databases",
+            "My technical expertise includes:\n- Full-stack web development\n- Cloud computing (AWS)\n- DevOps practices\n- Mobile app development\n- Database design"
+        ]
+    },
+    "hobbies": {
+        "patterns": ["interests", "free time", "hobby", "outside work", "personal life"],
+        "responses": [
+            "Besides coding, I enjoy:\n- Reading tech blogs\n- Contributing to open-source projects\n- Photography\n- Traveling\n- Learning new technologies",
+            "When I'm not coding, you can find me:\n- Exploring new technologies\n- Writing technical articles\n- Attending tech meetups\n- Working on side projects"
+        ]
+    }
+}

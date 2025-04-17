@@ -1,0 +1,76 @@
+:root {
+    --primary-color: #007bff;
+    --primary-dark: #0056b3;
+    --primary-rgb: 0, 123, 255;
+    --text-color: #333;
+    --bg-color: #ffffff;
+    --card-bg: #f8f9fa;
+    --border-color: #dee2e6;
+    --input-bg: #ffffff;
+}
+
+body.dark-mode {
+    --text-color: #e1e1e1;
+    --bg-color: #1a1a1a;
+    --card-bg: #2d2d2d;
+    --border-color: #404040;
+    --input-bg: #333333;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle {
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(var(--primary-rgb), 0.1);
+}
+
+.dark-mode .social-icon,
+.dark-mode .footer-links a {
+    color: var(--text-color);
+}
+
+.dark-mode .blog-card,
+.dark-mode .skill-card,
+.dark-mode .service-card {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+.contact-redirect-btn,
+.contact-btn {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: 2px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.contact-redirect-btn:hover,
+.contact-btn:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    color: #ffffff;
+}
+
+.dark-mode .contact-redirect-btn,
+.dark-mode .contact-btn {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+}
+
+.dark-mode .contact-redirect-btn:hover,
+.dark-mode .contact-btn:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    color: #ffffff;
+}

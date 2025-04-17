@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Circle with animation -->
+    <circle cx="100" cy="100" r="90" fill="#f0f0f0">
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Central Node with pulse animation -->
+    <circle cx="100" cy="100" r="20" fill="#4a90e2">
+        <animate attributeName="r" values="18;22;18" dur="2s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Connecting Lines with animation -->
+    <g stroke="#4a90e2" stroke-width="3">
+        <line x1="100" y1="100" x2="40" y2="60">
+            <animate attributeName="stroke-width" values="2;4;2" dur="3s" repeatCount="indefinite" />
+        </line>
+        <line x1="100" y1="100" x2="160" y2="60">
+            <animate attributeName="stroke-width" values="2;4;2" dur="3s" repeatCount="indefinite" begin="0.5s" />
+        </line>
+        <line x1="100" y1="100" x2="40" y2="140">
+            <animate attributeName="stroke-width" values="2;4;2" dur="3s" repeatCount="indefinite" begin="1s" />
+        </line>
+        <line x1="100" y1="100" x2="160" y2="140">
+            <animate attributeName="stroke-width" values="2;4;2" dur="3s" repeatCount="indefinite" begin="1.5s" />
+        </line>
+    </g>
+    
+    <!-- Satellite Nodes with animation -->
+    <g>
+        <circle cx="40" cy="60" r="15" fill="#3b5998"> <!-- Facebook Blue -->
+            <animate attributeName="r" values="14;16;14" dur="4s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="160" cy="60" r="15" fill="#1da1f2"> <!-- Twitter Blue -->
+            <animate attributeName="r" values="14;16;14" dur="4s" repeatCount="indefinite" begin="1s" />
+        </circle>
+        <circle cx="40" cy="140" r="15" fill="#0077b5"> <!-- LinkedIn Blue -->
+            <animate attributeName="r" values="14;16;14" dur="4s" repeatCount="indefinite" begin="2s" />
+        </circle>
+        <circle cx="160" cy="140" r="15" fill="#333"> <!-- GitHub Dark -->
+            <animate attributeName="r" values="14;16;14" dur="4s" repeatCount="indefinite" begin="3s" />
+        </circle>
+    </g>
+    
+    <!-- Social Icons with animation -->
+    <g fill="white">
+        <path d="M35 60 h10 v-4 h-3 v-3 h3 v-3 h-10 v3 h3 v3 h-3 z"> <!-- Simplified F -->
+            <animate attributeName="fill-opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" />
+        </path>
+        <path d="M155 60 l5-5 l5 5 l-5 5 z"> <!-- Simplified Bird -->
+            <animate attributeName="fill-opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" begin="0.5s" />
+        </path>
+        <text x="35" y="143" font-size="12" font-family="Arial">in
+            <animate attributeName="fill-opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" begin="1s" />
+        </text>
+        <path d="M155 140 l5-5 l5 5 l-5 5 z"> <!-- Simplified Octocat -->
+            <animate attributeName="fill-opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" begin="1.5s" />
+        </path>
+    </g>
+</svg>

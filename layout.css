@@ -1,0 +1,461 @@
+/* ===== LAYOUT STYLES ===== */
+/* Main Layout Components and Structure */
+
+/* ===== HEADER SECTION ===== */
+/* Header Navigation and Logo */
+
+/* Header Container */
+header {
+    background-color: var(--header-bg);
+    padding: 15px 50px;
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed; /* Make header sticky */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+}
+
+/* Scrolled header state */
+header.scrolled {
+    padding: 10px 50px;
+    background-color: rgba(51, 51, 51, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo styling */
+header .logo a {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--highlight-color);
+    letter-spacing: 1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+header .logo a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(to right, var(--highlight-color), transparent);
+    transform: scaleX(0.3);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+header .logo a:hover::before {
+    transform: scaleX(1);
+}
+
+/* Navigation Container */
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    position: relative;
+}
+
+/* Navigation Link Styles */
+header nav ul li a {
+    color: var(--text-color);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Active link state */
+header nav ul li a.active {
+    color: var(--highlight-color);
+    font-weight: 600;
+}
+
+header nav ul li a.active::after {
+    width: 100%;
+}
+
+/* Link hover effect */
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--highlight-color);
+    transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
+}
+
+header nav ul li a:hover {
+    color: var(--highlight-color);
+}
+
+/* Contact Button Component */
+header nav ul li a.contact-btn {
+    background-color: var(--highlight-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul li a.contact-btn:hover {
+    background-color: var(--highlight-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+header nav ul li a.contact-btn::after {
+    display: none;
+}
+
+/* Theme Toggle Component */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--highlight-color);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 15px;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle i {
+    font-size: 1.2rem;
+}
+
+/* Mobile Navigation Toggle */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--text-color);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* ===== HERO SECTION ===== */
+/* Main Hero Area Styles */
+
+.hero {
+    background-color: var(--hero-bg);
+    padding: 100px 20px 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.profile-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    flex: 1.5;
+    padding-right: 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.professional-tagline {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--highlight-color);
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    border-left: 3px solid var(--highlight-color);
+    padding-left: 15px;
+    font-style: italic;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: var(--text-color);
+    max-width: 600px;
+}
+
+.highlight {
+    color: var(--highlight-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--card-bg);
+    color: var(--highlight-color);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px var(--card-shadow);
+}
+
+.social-icon:hover {
+    background-color: var(--highlight-color);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--highlight-color);
+    color: white;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+}
+
+.download-btn:hover {
+    background-color: var(--highlight-hover);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(139, 69, 19, 0.4);
+}
+
+/* Add space below header to prevent content from being hidden */
+body {
+    padding-top: 80px; /* Adjust based on header height */
+}
+
+/* ===== RESPONSIVE LAYOUT ===== */
+/* Responsive Breakpoints and Adaptations */
+
+/* Header Responsive Adjustments */
+@media (max-width: 992px) {
+    header {
+        padding: 15px 30px;
+    }
+    
+    header.scrolled {
+        padding: 10px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Show mobile menu toggle */
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    /* Hide desktop navigation */
+    header nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: var(--card-bg);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 50px 0;
+    }
+    
+    /* Show mobile menu when active */
+    header nav ul.active {
+        right: 0;
+    }
+    
+    /* Adjust link styles for mobile */
+    header nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    header nav ul li a {
+        display: block;
+        padding: 15px;
+    }
+    
+    /* Adjust contact button for mobile */
+    header nav ul li a.contact-btn {
+        margin: 10px auto;
+        display: inline-block;
+    }
+    
+    /* Adjust theme toggle position */
+    .theme-toggle {
+        position: absolute;
+        top: 15px;
+        right: 70px;
+    }
+    
+    /* Hamburger menu animation */
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    
+    body {
+        padding-top: 70px;
+    }
+}
+
+/* Hero responsive styles */
+@media (max-width: 992px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-content {
+        padding-right: 0;
+    }
+    
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .professional-tagline {
+        border-left: none;
+        padding-left: 0;
+        border-bottom: 2px solid var(--highlight-color);
+        padding-bottom: 10px;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .professional-tagline {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+    
+    .professional-tagline {
+        font-size: 1rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* Add body styles for when mobile menu is open */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Add overlay for mobile menu */
+body.menu-open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
