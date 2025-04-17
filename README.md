@@ -37,8 +37,8 @@ If you wish to use it for commercial purposes, please **purchase a license or co
 ## 📬 Contact
 
 - Portfolio: [ajmal.site](https://ajmal.site)
-- LinkedIn: [Connect with me](https://linkedin.com/in/yourprofile)
-- Email: contact@ajmal.site
+- LinkedIn: [Connect with me](https://linkedin.com/in/ajmalmalayil)
+- Email: ajmalmalayil896@gmail.com
 
 ---
 
