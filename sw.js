@@ -1,23 +1,23 @@
 const CACHE_NAME = 'bb-cache-v1';
 const ASSETS_TO_CACHE = [
-    '/',
-    '/index.html',
-    '/about.html',
-    '/blogs.html',
-    '/main.js',
-    '/styles/main.css',
-    '/styles/layout.css',
-    '/styles/components.css',
-    '/styles/animations.css',
-    '/styles/modal.css',
-    '/styles/footer.css',
-    '/images/network.svg',
-    '/images/cloud-security.svg',
-    '/images/automation.svg',
-    '/images/devops.svg',
-    '/images/contact-illustration.svg',
-    '/images/social-connect.svg',
-    '/images/profile.jpg'
+    './',
+    './index.html',
+    './about.html',
+    './blogs.html',
+    './main.js',
+    './styles/main.css',
+    './styles/layout.css',
+    './styles/components.css',
+    './styles/animations.css',
+    './styles/modal.css',
+    './styles/footer.css',
+    './images/network.svg',
+    './images/cloud-security.svg',
+    './images/automation.svg',
+    './images/devops.svg',
+    './images/contact-illustration.svg',
+    './images/social-connect.svg',
+    './images/profile.jpg'
 ];
 
 self.addEventListener('install', (event) => {
