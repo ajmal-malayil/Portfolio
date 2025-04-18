@@ -57,25 +57,32 @@ self.addEventListener('fetch', (event) => {
                     
                     // Clone the response for caching
                     const responseToCache = response.clone();
-                    
-                    // For CSS files, ensure correct MIME type
                     const url = new URL(event.request.url);
-                    if (url.pathname.endsWith('.css')) {
+                    
+                    // Handle MIME types for CSS and JS files
+                    if (url.pathname.endsWith('.css') || url.pathname.endsWith('.js')) {
                         return response.blob().then(blob => {
-                            return new Response(blob, {
+                            const contentType = url.pathname.endsWith('.css') ? 'text/css' : 'application/javascript';
+                            const newResponse = new Response(blob, {
                                 status: 200,
                                 headers: new Headers({
-                                    'Content-Type': 'text/css'
+                                    'Content-Type': contentType
                                 })
                             });
+                            
+                            // Cache the response with correct MIME type
+                            caches.open(CACHE_NAME).then(cache => {
+                                cache.put(event.request, newResponse.clone());
+                            });
+                            
+                            return newResponse;
                         });
                     }
                     
-                    // Cache the response
-                    caches.open(CACHE_NAME)
-                        .then(cache => {
-                            cache.put(event.request, responseToCache);
-                        });
+                    // Cache other responses
+                    caches.open(CACHE_NAME).then(cache => {
+                        cache.put(event.request, responseToCache);
+                    });
                     
                     return response;
                 });
