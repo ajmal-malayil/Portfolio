@@ -57,7 +57,7 @@ const blogPosts = {
         category: 'Networking',
         date: 'Sep 30, 2023',
         readTime: '6 min read',
-        image: 'images/network.svg',
+        image: 'network.svg',
         content: `
             <p>Key principles and best practices for designing scalable and secure network infrastructures:</p>
             
@@ -76,7 +76,7 @@ const blogPosts = {
         category: 'Cloud',
         date: 'Sep 25, 2023',
         readTime: '8 min read',
-        image: 'images/cloud-security.svg',
+        image: 'cloud-security.svg',
         content: `
             <p>Best practices and step-by-step guide for migrating your infrastructure to the cloud:</p>
             
@@ -95,7 +95,7 @@ const blogPosts = {
         category: 'Security',
         date: 'Sep 20, 2023',
         readTime: '7 min read',
-        image: 'images/automation.svg',
+        image: 'automation.svg',
         content: `
             <p>How to implement automated security monitoring and response in your infrastructure:</p>
             
@@ -114,7 +114,7 @@ const blogPosts = {
         category: 'Security',
         date: 'Oct 15, 2023',
         readTime: '7 min read',
-        image: 'images/cloud-security.svg',
+        image: 'cloud-security.svg',
         content: `
             <p>As organizations continue to migrate their infrastructure to the cloud, security remains a top priority. Here are the essential security measures and strategies to protect your cloud infrastructure from emerging threats in 2024:</p>
             
@@ -133,7 +133,7 @@ const blogPosts = {
         category: 'Automation',
         date: 'Oct 10, 2023',
         readTime: '8 min read',
-        image: 'images/automation.svg',
+        image: 'automation.svg',
         content: `
             <p>Learn how to streamline your IT operations using Python scripts and automation frameworks. This guide covers:</p>
             
@@ -152,7 +152,7 @@ const blogPosts = {
         category: 'DevOps',
         date: 'Oct 5, 2023',
         readTime: '9 min read',
-        image: 'images/devops.svg',
+        image: 'devops.svg',
         content: `
             <p>A comprehensive guide to setting up robust CI/CD pipelines for large-scale applications:</p>
             
