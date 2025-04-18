@@ -22,40 +22,51 @@ const ASSETS_TO_CACHE = [
 
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(ASSETS_TO_CACHE)) // ✅ FIXED this line
+    caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS_TO_CACHE))
   );
 });
 
 self.addEventListener('fetch', event => {
+  // 🔥 Handle navigation requests (e.g., index.html) separately
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request)
+        .then(response => {
+          return response;
+        })
+        .catch(() => {
+          return caches.match('index.html'); // fallback
+        })
+    );
+    return;
+  }
+
+  // 💡 For all other requests (CSS, JS, images, etc.)
   event.respondWith(
-    caches.match(event.request)
-      .then(cachedResponse => {
-        if (cachedResponse) {
-          return cachedResponse;
+    caches.match(event.request).then(cachedResponse => {
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+
+      return fetch(event.request, {
+        redirect: 'follow',
+        credentials: 'same-origin'
+      }).then(networkResponse => {
+        if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
+          return networkResponse;
         }
 
-        return fetch(event.request, {
-          redirect: 'follow', // ✅ ensures redirects are handled correctly
-          credentials: 'same-origin'
-        }).then(networkResponse => {
-          if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
-            return networkResponse;
-          }
-
-          const responseClone = networkResponse.clone();
-          caches.open(CACHE_NAME)
-            .then(cache => {
-              cache.put(event.request, responseClone);
-            });
-
-          return networkResponse;
-        }).catch(error => {
-          // Optional: fallback page or console error
-          console.error('Fetch failed:', error);
-          throw error;
+        const responseClone = networkResponse.clone();
+        caches.open(CACHE_NAME).then(cache => {
+          cache.put(event.request, responseClone);
         });
-      })
+
+        return networkResponse;
+      }).catch(error => {
+        console.error('Fetch failed:', error);
+        throw error;
+      });
+    })
   );
 });
 
