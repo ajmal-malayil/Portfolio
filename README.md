@@ -32,11 +32,11 @@ Welcome to my personal portfolio! This website showcases my skills, certificatio
 This portfolio is released for **personal and learning use only**.  
 If you wish to use it for commercial purposes, please **purchase a license or contact me**.
 
-> 📄 See [`LICENSE.txt`](LICENSE.txt) for full license details.
+> 📄 See [`LICENSE.txt`](license.txt) for full license details.
 
 ## 📬 Contact
 
-- Portfolio: [ajmal.site](https://ajmal.site)
+- Portfolio: [ajmal.site]([https://ajmal.site](https://ajmalmalayil.pages.dev/))
 - LinkedIn: [Connect with me](https://linkedin.com/in/ajmalmalayil)
 - Email: ajmalmalayil896@gmail.com
 
