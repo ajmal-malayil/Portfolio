@@ -10,6 +10,7 @@ const ASSETS_TO_CACHE = [
     'animations.css',
     'modal.css',
     'footer.css',
+    'dark-mode.css',
     'network.svg',
     'cloud-security.svg',
     'automation.svg',
