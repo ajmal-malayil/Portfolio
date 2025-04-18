@@ -1,6 +1,5 @@
 const CACHE_NAME = 'bb-cache-v1';
 const ASSETS_TO_CACHE = [
-    './',
     'index.html',
     'about.html',
     'blogs.html',
