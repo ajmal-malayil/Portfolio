@@ -17,7 +17,7 @@ const ASSETS_TO_CACHE = [
     './images/devops.svg',
     './images/contact-illustration.svg',
     './images/social-connect.svg',
-    './profile.jpg'
+    '.profile.jpg'
 ];
 
 self.addEventListener('install', (event) => {
