@@ -5,7 +5,7 @@ const ASSETS_TO_CACHE = [
     './about.html',
     './blogs.html',
     './main.js',
-    'styles/main.css',
+    './styles/main.css',
     './styles/layout.css',
     './styles/components.css',
     './styles/animations.css',
@@ -48,16 +48,43 @@ self.addEventListener('fetch', (event) => {
                 if (response) {
                     return response;
                 }
-                return fetch(event.request).then(response => {
-                    if (!response || response.status !== 200 || response.type !== 'basic') {
+                return fetch(event.request, {
+                    redirect: 'follow'
+                }).then(response => {
+                    if (!response || response.status !== 200) {
                         return response;
                     }
+                    
+                    // Clone the response for caching
                     const responseToCache = response.clone();
+                    
+                    // For CSS files, ensure correct MIME type
+                    const url = new URL(event.request.url);
+                    if (url.pathname.endsWith('.css')) {
+                        return response.blob().then(blob => {
+                            return new Response(blob, {
+                                status: 200,
+                                headers: new Headers({
+                                    'Content-Type': 'text/css'
+                                })
+                            });
+                        });
+                    }
+                    
+                    // Cache the response
                     caches.open(CACHE_NAME)
                         .then(cache => {
                             cache.put(event.request, responseToCache);
                         });
+                    
                     return response;
+                });
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+                return new Response('Network error occurred', {
+                    status: 503,
+                    statusText: 'Service Unavailable'
                 });
             })
     );
