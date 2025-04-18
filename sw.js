@@ -1,62 +1,59 @@
 const CACHE_NAME = 'bb-cache-v1';
 const ASSETS_TO_CACHE = [
-    'index.html',
-    'about.html',
-    'blogs.html',
-    'main.js',
-    'main.css',
-    'layout.css',
-    'components.css',
-    'animations.css',
-    'modal.css',
-    'footer.css',
-    'dark-mode.css',
-    'network.svg',
-    'cloud-security.svg',
-    'automation.svg',
-    'devops.svg',
-    'contact-illustration.svg',
-    'social-connect.svg',
-    'profile.jpg'
+  'index.html',
+  'about.html',
+  'blogs.html',
+  'main.js',
+  'main.css',
+  'layout.css',
+  'components.css',
+  'animations.css',
+  'modal.css',
+  'footer.css',
+  'dark-mode.css',
+  'network.svg',
+  'cloud-security.svg',
+  'automation.svg',
+  'devops.svg',
+  'contact-illustration.svg',
+  'social-connect.svg',
+  'profile.jpg'
 ];
 
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(urlsToCache))
+      .then(cache => cache.addAll(ASSETS_TO_CACHE)) // ✅ FIXED this line
   );
 });
 
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
-      .then(response => {
-        // Return cached response if found
-        if (response) {
-          return response;
+      .then(cachedResponse => {
+        if (cachedResponse) {
+          return cachedResponse;
         }
 
-        // Clone the request because it's a one-time use stream
-        const fetchRequest = event.request.clone();
-
-        return fetch(fetchRequest, {
-          credentials: 'same-origin',
-          redirect: 'follow'
-        }).then(response => {
-          // Check if valid response
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response;
+        return fetch(event.request, {
+          redirect: 'follow', // ✅ ensures redirects are handled correctly
+          credentials: 'same-origin'
+        }).then(networkResponse => {
+          if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
+            return networkResponse;
           }
 
-          // Clone the response because it's a one-time use stream
-          const responseToCache = response.clone();
-
+          const responseClone = networkResponse.clone();
           caches.open(CACHE_NAME)
             .then(cache => {
-              cache.put(event.request, responseToCache);
+              cache.put(event.request, responseClone);
             });
 
-          return response;
+          return networkResponse;
+        }).catch(error => {
+          // Optional: fallback page or console error
+          console.error('Fetch failed:', error);
+          throw error;
         });
       })
   );
