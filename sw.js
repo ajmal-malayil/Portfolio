@@ -17,7 +17,7 @@ const ASSETS_TO_CACHE = [
     './images/devops.svg',
     './images/contact-illustration.svg',
     './images/social-connect.svg',
-    '.profile.jpg'
+    './images/profile.jpg'
 ];
 
 self.addEventListener('install', (event) => {
@@ -48,9 +48,7 @@ self.addEventListener('fetch', (event) => {
                 if (response) {
                     return response;
                 }
-                return fetch(event.request, {
-                    redirect: 'follow'
-                }).then(response => {
+                return fetch(event.request).then(response => {
                     if (!response || response.status !== 200) {
                         return response;
                     }
@@ -59,23 +57,10 @@ self.addEventListener('fetch', (event) => {
                     const responseToCache = response.clone();
                     const url = new URL(event.request.url);
                     
-                    // Handle MIME types for CSS and JS files
-                    if (url.pathname.endsWith('.css') || url.pathname.endsWith('.js')) {
-                        return response.blob().then(blob => {
-                            const contentType = url.pathname.endsWith('.css') ? 'text/css' : 'application/javascript';
-                            const newResponse = new Response(blob, {
-                                status: 200,
-                                headers: new Headers({
-                                    'Content-Type': contentType
-                                })
-                            });
-                            
-                            // Cache the response with correct MIME type
-                            caches.open(CACHE_NAME).then(cache => {
-                                cache.put(event.request, newResponse.clone());
-                            });
-                            
-                            return newResponse;
+                    // Cache the response if it's valid
+                    if (response.ok) {
+                        caches.open(CACHE_NAME).then(cache => {
+                            cache.put(event.request, response.clone());
                         });
                     }
                     
