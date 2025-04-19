@@ -61,6 +61,91 @@ window.addEventListener('scroll', () => {
 
 // Blog content data
 const blogPosts = {
+    'guardian-ai': {
+        title: '🛡️ GuardianAI: Multi-Model GenAI for Cyber Threat Detection',
+        category: 'AI Security',
+        date: 'Apr 19, 2025',
+        readTime: '10 min read',
+        image: 'guardian-ai.svg',
+        content: `
+            <h4>🚀 Introduction</h4>
+            <p>In today's rapidly evolving cybersecurity landscape, detecting and responding to threats quickly is more critical than ever. As part of the Google x Kaggle GenAI Capstone Project, I created GuardianAI—a smart, AI-powered threat detection tool that leverages multiple Generative AI models to analyze cybersecurity logs and generate structured, actionable reports.</p>
+            
+            <h4>🧠 What is GuardianAI?</h4>
+            <p>GuardianAI is a web-based threat log analyzer designed to simplify and automate the detection of cybersecurity threats. It supports multiple powerful GenAI models:</p>
+            <ul>
+                <li>Gemini (Google)</li>
+                <li>OpenAI GPT-4</li>
+                <li>Claude (Anthropic)</li>
+                <li>DeepSeek</li>
+            </ul>
+            
+            <h4>Key Features:</h4>
+            <ul>
+                <li>Upload various file types (PDF, Excel, EXE, TXT, and more)</li>
+                <li>Parse and understand content with document analysis</li>
+                <li>Contextual threat analysis using GenAI</li>
+                <li>Structured outputs in JSON format</li>
+                <li>Downloadable PDF reports</li>
+                <li>Visual threat levels, MITRE mappings, and AI-driven recommendations</li>
+            </ul>
+            
+            <h4>🔐 Real-World Problem Solved</h4>
+            <p>Cybersecurity professionals often face the challenge of making sense of unstructured log files and incident reports. Manual analysis is not only time-consuming but also vulnerable to oversight.</p>
+            
+            <p>GuardianAI solves this by:</p>
+            <ul>
+                <li>Automating the interpretation of log files</li>
+                <li>Leveraging GenAI to summarize threats and contextualize incidents</li>
+                <li>Producing structured reports to accelerate response time</li>
+            </ul>
+            
+            <h4>🔧 Technologies Used</h4>
+            <ul>
+                <li>Gradio for the interactive web interface</li>
+                <li>Python for core logic and model integrations</li>
+                <li>Google Gemini API (Live implementation)</li>
+                <li>Environment Variables to securely manage API keys</li>
+                <li>Render.com for application deployment</li>
+                <li>GitHub + Cloudflare Pages for portfolio hosting</li>
+            </ul>
+            
+            <h4>📌 GenAI Capabilities Demonstrated</h4>
+            <ul>
+                <li>✅ Structured Output (JSON Parsing)</li>
+                <li>✅ Document Understanding</li>
+                <li>✅ Retrieval-Augmented Generation (RAG)</li>
+                <li>🟡 Few-Shot Prompting (Coming Soon!)</li>
+            </ul>
+            
+            <h4>🎯 Live Demo</h4>
+            <p>🔗 Try the tool: <a href="#" target="https://ai-threat-analyzer.onrender.com/">🛡️ GuardianAI - Live App</a></p>
+            <p>📂 Explore the code: <a href="#" target="https://www.kaggle.com/code/ajmalmalayil/ai-powered-threat-detection-using-multi-modelgenai">📁 Kaggle Notebook</a></p>
+            <p>🌐 Visit my site: <a href="https://ajmalmalayil.pages.dev/" target="_blank">rovoindia.github.io</a></p>
+            
+            <h4>💡 Limitations & Future Improvements</h4>
+            <p>While GuardianAI is live and functional, it's still evolving:</p>
+            <ul>
+                <li>Multi-model integration is in progress</li>
+                <li>Currently only Gemini is live; other models show a "Coming Soon" message</li>
+                <li>The chatbot assistant has basic functionality—we plan to enhance it with better memory and interactivity</li>
+            </ul>
+            
+            <h4>🧩 Final Thoughts</h4>
+            <p>GuardianAI is more than just a project—it's a forward-thinking solution that showcases the power of Generative AI in the cybersecurity space. Built from the ground up, it's designed to help analysts and professionals detect threats faster and smarter.</p>
+            
+            <p>If you're hiring, collaborating, or exploring AI in security—let's connect!</p>
+            
+            <h4>🔗 Let's Connect</h4>
+            <ul>
+                <li>📧 Email: [ajmalmalayil896@gmail.com]</li>
+                <li>💼 LinkedIn: <a href="www.linkedin.com/in/ajmalmalayil" target="_blank">https://linkedin.com/in/yourprofile</a></li>
+                <li>🌐 Portfolio: <a href="https://ajmalmalayil.pages.dev/" target="_blank">https://rovoindia.github.io</a></li>
+            </ul>
+            
+            <p>Thanks for reading and stay secure! 🙌</p>
+        `
+    },
     'network': {
         title: 'Modern Network Architecture Design',
         category: 'Networking',
