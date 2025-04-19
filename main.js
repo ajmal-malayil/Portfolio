@@ -120,8 +120,8 @@ const blogPosts = {
             
             <h4>🎯 Live Demo</h4>
             <p>🔗 Try the tool: <a href="#" target="https://ai-threat-analyzer.onrender.com/">🛡️ GuardianAI - Live App</a></p>
-            <p>📂 Explore the code: <a href="#" target="https://www.kaggle.com/code/ajmalmalayil/ai-powered-threat-detection-using-multi-modelgenai">📁 Kaggle Notebook</a></p>
-            <p>🌐 Visit my site: <a href="https://ajmalmalayil.pages.dev/" target="_blank">rovoindia.github.io</a></p>
+            <p>📂 Explore the code: <a href="#" target="https://www.kaggle.com/code/ajmalmalayil/guardianai-genai-powered-cyber-threat-analyzer">📁 Kaggle Notebook</a></p>
+            <p>🌐 Visit my site: <a href="https://ajmalmalayil.pages.dev/" target="_blank">🌐 Portfolio</a></p>
             
             <h4>💡 Limitations & Future Improvements</h4>
             <p>While GuardianAI is live and functional, it's still evolving:</p>
@@ -139,8 +139,8 @@ const blogPosts = {
             <h4>🔗 Let's Connect</h4>
             <ul>
                 <li>📧 Email: [ajmalmalayil896@gmail.com]</li>
-                <li>💼 LinkedIn: <a href="www.linkedin.com/in/ajmalmalayil" target="_blank">https://linkedin.com/in/yourprofile</a></li>
-                <li>🌐 Portfolio: <a href="https://ajmalmalayil.pages.dev/" target="_blank">https://rovoindia.github.io</a></li>
+                <li>💼 LinkedIn: <a href="www.linkedin.com/in/ajmalmalayil" target="_blank">LinkedIn</a></li>
+                <li>🌐 Portfolio: <a href="https://ajmalmalayil.pages.dev/" target="_blank">Portfolio</a></li>
             </ul>
             
             <p>Thanks for reading and stay secure! 🙌</p>
