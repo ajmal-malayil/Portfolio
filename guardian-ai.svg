@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- AI Shield Background -->
+  <path d="M400 50 L700 200 L700 500 L400 650 L100 500 L100 200 Z" fill="#2a4365" opacity="0.1"/>
+  
+  <!-- Central Shield -->
+  <path d="M400 100 L600 200 L600 400 L400 500 L200 400 L200 200 Z" fill="none" stroke="#4299e1" stroke-width="8"/>
+  
+  <!-- AI Circuit Pattern -->
+  <g fill="none" stroke="#63b3ed" stroke-width="2">
+    <path d="M300 250 L500 250 M400 200 L400 400"/>
+    <circle cx="400" cy="300" r="50"/>
+    <path d="M350 300 C350 270, 450 270, 450 300"/>
+    <path d="M350 320 L450 320"/>
+  </g>
+  
+  <!-- Lock Icon -->
+  <g transform="translate(375,275)">
+    <rect x="0" y="0" width="50" height="40" rx="5" fill="#4299e1"/>
+    <rect x="15" y="-10" width="20" height="20" rx="10" fill="#2b6cb0"/>
+  </g>
+  
+  <!-- Binary Data Streams -->
+  <g fill="#63b3ed" font-family="monospace" font-size="12">
+    <text x="150" y="250">1010</text>
+    <text x="600" y="250">0101</text>
+    <text x="150" y="400">0011</text>
+    <text x="600" y="400">1100</text>
+  </g>
+  
+  <!-- Pulse Effect -->
+  <circle cx="400" cy="300" r="80" fill="none" stroke="#4299e1" stroke-width="2">
+    <animate attributeName="r" values="80;85;80" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>
