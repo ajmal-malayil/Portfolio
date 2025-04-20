@@ -119,8 +119,8 @@ const blogPosts = {
             </ul>
             
             <h4>🎯 Live Demo</h4>
-            <p>🔗 Try the tool: <a href="#" target="https://ai-threat-analyzer.onrender.com/">🛡️ GuardianAI - Live App</a></p>
-            <p>📂 Explore the code: <a href="#" target="https://www.kaggle.com/code/ajmalmalayil/guardianai-genai-powered-cyber-threat-analyzer">📁 Kaggle Notebook</a></p>
+            <p>🔗 Try the tool: <a href="https://ai-threat-analyzer.onrender.com/" target="_blank">🛡️ GuardianAI - Live App</a></p>
+            <p>📂 Explore the code: <a href="https://www.kaggle.com/code/ajmalmalayil/ai-powered-threat-detection-using-multi-modelgenai" target="_blank">📁 Kaggle Notebook</a></p>
             <p>🌐 Visit my site: <a href="https://ajmalmalayil.pages.dev/" target="_blank">🌐 Portfolio</a></p>
             
             <h4>💡 Limitations & Future Improvements</h4>
@@ -138,9 +138,9 @@ const blogPosts = {
             
             <h4>🔗 Let's Connect</h4>
             <ul>
-                <li>📧 Email: [ajmalmalayil896@gmail.com]</li>
-                <li>💼 LinkedIn: <a href="www.linkedin.com/in/ajmalmalayil" target="_blank">LinkedIn</a></li>
-                <li>🌐 Portfolio: <a href="https://ajmalmalayil.pages.dev/" target="_blank">Portfolio</a></li>
+                <li>📧 : <a href="mailto:ajmalmalayil896@gmail.com">Email</a></li>
+                <li>💼 : <a href="https://www.linkedin.com/in/ajmalmalayil" target="_blank">LinkedIn</a></li>
+                <li>🌐 : <a href="https://ajmalmalayil.pages.dev/" target="_blank">Portfolio</a></li>
             </ul>
             
             <p>Thanks for reading and stay secure! 🙌</p>
@@ -302,7 +302,7 @@ blogCards.forEach(card => {
     
     // Find the blog post data
     const blogKey = Object.keys(blogPosts).find(key => 
-        blogPosts[key].title === blogTitle
+    blogPosts[key].title.replace(/[^\w\s]/g, '') === blogTitle.replace(/[^\w\s]/g, '')
     );
     
     if (readMoreBtn) {
