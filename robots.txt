@@ -1,6 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /documents/
-Disallow: /images/Test pics/
-
-Sitemap: /sitemap.xml
+Sitemap: https://ajmalmalayil.pages.dev/sitemap.xml
