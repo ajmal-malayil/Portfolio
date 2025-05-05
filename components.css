@@ -162,6 +162,10 @@
     position: relative;
     height: 200px;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 80px; /* Added padding to move image right */
 }
 
 .blog-image img {
