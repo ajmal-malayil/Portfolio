@@ -701,6 +701,28 @@
     line-height: 1.6;
 }
 
+.modal-body h2,
+.modal-body h3,
+.modal-body h4 {
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+    color: var(--heading-color);
+}
+
+.modal-body p {
+    margin-bottom: 1em;
+}
+
+.modal-body ul,
+.modal-body ol {
+    margin-bottom: 1em;
+    padding-left: 1.5em;
+}
+
+.modal-body li {
+    margin-bottom: 0.5em;
+}
+
 .modal-image {
     width: 100%;
     max-height: 400px;
@@ -963,5 +985,42 @@
     .contact-illustration {
         position: static;
         margin-bottom: 30px;
+    }
+}
+
+.blog-content {
+    display: none;
+}
+
+.comparison-table,
+.skills-table {
+    width: 100%;
+    margin: 1.5em 0;
+    border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td,
+.skills-table th,
+.skills-table td {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+.comparison-table th,
+.skills-table th {
+    background-color: var(--highlight-color);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .comparison-table,
+    .skills-table {
+        font-size: 0.9rem;
+    }
+    
+    .modal-content {
+        padding: 15px;
     }
 }
