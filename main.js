@@ -61,6 +61,120 @@ window.addEventListener('scroll', () => {
 
 // Blog content data
 const blogPosts = {
+    'ai-ml-future': {
+        title: "AI × ML × LLMs = The Future. Here's What Developers Need to Know",
+        category: 'AI & ML',
+        date: 'May 06, 2025',
+        readTime: '10 min read',
+        image: 'ai-ml-llm.svg',
+        content: `
+            <h2>🚀 Introduction</h2>
+            <p>Artificial Intelligence (AI), Machine Learning (ML), and Large Language Models (LLMs) are not just tech buzzwords — they are fundamentally transforming how we develop, secure, and interact with software.</p>
+            <p>Whether you're a student starting out, a developer exploring AI integration, or a cybersecurity professional preparing for LLM-driven threats, understanding this convergence is no longer optional. It's essential.</p>
+            
+            <h3>In this article, we break down:</h3>
+            <ul>
+                <li>The differences between AI, ML, and LLMs</li>
+                <li>Real-world impact on software development and security</li>
+                <li>What skills and tools developers should focus on right now</li>
+            </ul>
+
+            <h2>🤖 AI vs ML vs LLMs — What's the Difference?</h2>
+            <div class="comparison-table">
+                <table>
+                    <tr>
+                        <th>Term</th>
+                        <th>What It Is</th>
+                        <th>Why It Matters</th>
+                    </tr>
+                    <tr>
+                        <td>AI</td>
+                        <td>The broad science of making machines "smart"</td>
+                        <td>Foundational for automation and decision-making</td>
+                    </tr>
+                    <tr>
+                        <td>ML</td>
+                        <td>Subfield of AI where machines learn from data</td>
+                        <td>Powers predictions, pattern recognition, and personalization</td>
+                    </tr>
+                    <tr>
+                        <td>LLMs</td>
+                        <td>Language models trained on massive text data</td>
+                        <td>Understand and generate human language — at scale</td>
+                    </tr>
+                </table>
+            </div>
+            <p>Today's LLMs like GPT-4, Claude, and Gemini can write code, summarize documents, automate workflows, and even simulate reasoning.</p>
+
+            <h2>🧠 Why This Convergence Matters in 2025</h2>
+            <h3>1. LLMs Are Becoming Core Infrastructure</h3>
+            <p>They're moving from assistants to autonomous actors in systems — handling decision-making, automation, and reasoning across industries.</p>
+
+            <h3>2. ML Is Embedded in Everyday Dev Work</h3>
+            <p>You don't have to be a data scientist. Tools like GitHub Copilot, AI-driven testing, and AI-enhanced IDEs are making ML part of daily development.</p>
+
+            <h3>3. Security Is a Growing Concern</h3>
+            <p>LLMs can hallucinate, leak sensitive data, or misinterpret inputs. Understanding their behavior is key to integrating them safely and ethically.</p>
+
+            <h2>🛠️ What Developers Should Focus On Now</h2>
+            <p>If you're a developer or technical learner, here's where to invest your time:</p>
+
+            <h3>🔹 Prompt Engineering</h3>
+            <p>Crafting effective, structured prompts is a critical new skill. It's not just what you ask — it's how you ask.</p>
+
+            <h3>🔹 LLM APIs & Frameworks</h3>
+            <p>Familiarize yourself with tools like:</p>
+            <ul>
+                <li>OpenAI / Gemini APIs</li>
+                <li>LangChain, LlamaIndex, CrewAI</li>
+                <li>Agent frameworks that give LLMs memory, tools, and task handling</li>
+            </ul>
+
+            <h3>🔹 Data Handling & Security</h3>
+            <p>Learn how to:</p>
+            <ul>
+                <li>Validate model outputs</li>
+                <li>Prevent injection and misuse</li>
+                <li>Integrate safely with backend systems</li>
+            </ul>
+
+            <h2>🧭 Roadmap: Skills to Learn in 2025</h2>
+            <div class="skills-table">
+                <table>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Why It's Critical</th>
+                    </tr>
+                    <tr>
+                        <td>Python or TypeScript</td>
+                        <td>Dominant in LLM-based dev</td>
+                    </tr>
+                    <tr>
+                        <td>Vector databases (e.g., FAISS, Chroma)</td>
+                        <td>Store and retrieve knowledge contextually</td>
+                    </tr>
+                    <tr>
+                        <td>API integration</td>
+                        <td>Most LLMs work via API calls</td>
+                    </tr>
+                    <tr>
+                        <td>Model evaluation</td>
+                        <td>Understanding bias, accuracy, and risk</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>🌐 Final Thoughts</h2>
+            <p>AI, ML, and LLMs are not replacing developers — they're empowering us to build smarter, faster, and more securely.</p>
+            <p>Whether you're securing networks, designing apps, or just starting your journey, now is the time to understand how these tools work — and where they're going.</p>
+
+            <h3>✅ Want more?</h3>
+            <ul>
+                <li>Follow my <a href="https://www.linkedin.com/in/ajmalmalayil" target="_blank" style="color: #0A66C2; font-weight: bold;"><i class="fab fa-linkedin"></i> LinkedIn</a> for more insights</li>
+                <li>Explore hands-on AI tools on my <a href="https://ajmalmalayil.pages.dev" target="_blank" style="color: #2ECC71; font-weight: bold;"><i class="fas fa-globe"></i> portfolio</a></li>
+            </ul>
+        `
+    },
     'guardian-ai': {
         title: '🛡️ GuardianAI: Multi-Model GenAI for Cyber Threat Detection',
         category: 'AI Security',
