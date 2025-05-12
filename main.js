@@ -64,8 +64,8 @@ const blogPosts = {
     'ai-ml-future': {
         title: "AI × ML × LLMs = The Future. Here's What Developers Need to Know",
         category: 'AI & ML',
-        date: 'May 06, 2025',
-        readTime: '10 min read',
+        date: 'May 13, 2025',
+        readTime: '08 min read',
         image: 'ai-ml-llm.svg',
         content: `
             <h2>🚀 Introduction</h2>
