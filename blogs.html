@@ -317,5 +317,22 @@
         // Initialize search functionality
         document.addEventListener('DOMContentLoaded', createSearchUI);
     </script>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <span class="modal-category"></span>
+                <h2 class="modal-title"></h2>
+                <div class="modal-meta">
+                    <span class="modal-date"><i class="far fa-calendar-alt"></i></span>
+                    <span class="modal-read-time"><i class="far fa-clock"></i></span>
+                </div>
+            </div>
+            <img class="modal-image" alt="Blog Post Image">
+            <div class="modal-body"></div>
+        </div>
+    </div>
 </body>
 </html>
