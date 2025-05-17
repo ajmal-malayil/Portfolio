@@ -2,6 +2,9 @@
   Content-Type: application/xml
   Cache-Control: no-cache
 
+/robots.txt
+  Content-Type: text/plain
+
 /*.css
   Content-Type: text/css
 
