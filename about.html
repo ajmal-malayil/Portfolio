@@ -155,8 +155,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <div class="contact-form-container">
                 <h3>Send Me a Message</h3>
-                <form action="https://formspree.io/f/xpzgwwzj" method="POST" class="contact-form" id="contactForm">
-                    <!-- CSRF Protection -->
+                <form action="http://ajmalmalayil-n8n.onrender.com:5678/webhook/contact-form" method="POST" class="contact-form" id="contactForm">
+                <!-- CSRF Protection -->
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                     
                     <!-- Honeypot field for spam prevention -->
@@ -219,7 +219,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
 
                     <!-- reCAPTCHA integration -->
-                    <div class="g-recaptcha" data-sitekey="6LdPWjEpAAAAANOK_HgzPw_KN6qw9oF5lGxzj6P9" data-theme="light"></div>
+                    <div class="g-recaptcha" data-sitekey="6LfFiFIrAAAAAKvX_VzDrI7nHmg0A8Zdo02PtnNI" data-theme="light"></div>
 
                     <button type="submit" class="submit-btn" id="submitBtn">
                         <span class="btn-text"><i class="fas fa-paper-plane"></i> Send Message</span>
