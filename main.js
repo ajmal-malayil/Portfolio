@@ -584,6 +584,34 @@ document.addEventListener('DOMContentLoaded', function() {
         captcha: '<div class="alert error"><i class="fas fa-exclamation-circle"></i> Please complete the reCAPTCHA verification.</div>'
     };
 
+    // ✅ Define validateForm here
+    function validateForm() {
+        let isValid = true;
+        const requiredFields = document.querySelectorAll('.enhanced-input[required]');
+
+        requiredFields.forEach(field => {
+            const errorDiv = document.getElementById(field.id + 'Error');
+            if (!field.checkValidity()) {
+                field.classList.add('error');
+                field.classList.remove('success');
+                if (errorDiv) {
+                    errorDiv.textContent = field.validationMessage;
+                    errorDiv.style.display = 'block';
+                }
+                isValid = false;
+            } else {
+                field.classList.remove('error');
+                field.classList.add('success');
+                if (errorDiv) {
+                    errorDiv.textContent = '';
+                    errorDiv.style.display = 'none';
+                }
+            }
+        });
+
+        return isValid;
+    }
+    
     // Enhanced form submission handler with reCAPTCHA validation
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
