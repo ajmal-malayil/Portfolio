@@ -638,6 +638,7 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             // Collect form data
             const formData = new FormData(form);
+            formData.append('g-recaptcha-response', recaptchaResponse); // ✅ Add this line
             
             // Send form data using Fetch API
             const response = await fetch(form.action, {
