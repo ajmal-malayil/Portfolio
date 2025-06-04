@@ -619,6 +619,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Validate reCAPTCHA first
         const recaptchaResponse = grecaptcha.getResponse();
         if (!recaptchaResponse) {
+            grecaptcha.reset(); 
             formStatus.innerHTML = statusMessages.captcha;
             return false;
         }
