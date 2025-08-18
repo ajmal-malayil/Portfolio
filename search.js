@@ -95,5 +95,6 @@ const displaySearchResults = (results, container) => {
 
 // Initialize search functionality
 
-document.addEventListener('DOMContentLoaded', createSearchUI);
+document.addEventListener('DOMContentLoaded', () => {
+    createSearchUI();
 
