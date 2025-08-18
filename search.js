@@ -16,21 +16,6 @@ const searchBlog = (query) => {
 
 // Create search UI
 const createSearchUI = () => {
-    const searchContainer = document.createElement('div');
-    searchContainer.className = 'search-container';
-    searchContainer.innerHTML = `
-        <div class="search-box">
-            <input type="text" placeholder="Search blog posts..." id="searchInput">
-            <i class="fas fa-search"></i>
-        </div>
-        <div class="search-results" id="searchResults"></div>
-    `;
-
-    const blogSection = document.querySelector('.blog-section');
-    if (blogSection) {
-        blogSection.insertBefore(searchContainer, blogSection.firstChild);
-    }
-
     const searchInput = document.getElementById('searchInput');
     const searchResults = document.getElementById('searchResults');
 
@@ -109,4 +94,5 @@ const displaySearchResults = (results, container) => {
 };
 
 // Initialize search functionality
+
 document.addEventListener('DOMContentLoaded', createSearchUI);
