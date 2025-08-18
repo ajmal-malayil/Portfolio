@@ -97,4 +97,4 @@ const displaySearchResults = (results, container) => {
 
 document.addEventListener('DOMContentLoaded', () => {
     createSearchUI();
-
+});
