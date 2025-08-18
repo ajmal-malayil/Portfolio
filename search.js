@@ -18,13 +18,13 @@ const searchBlog = (query) => {
 const createSearchUI = () => {
 const searchContainer = document.createElement('div');
     searchContainer.className = 'search-container';
-    searchContainer.innerHTML = 
+    searchContainer.innerHTML = `
         <div class="search-box">
             <input type="text" placeholder="Search blog posts..." id="searchInput">
             <i class="fas fa-search"></i>
         </div>
         <div class="search-results" id="searchResults"></div>
-    ;
+    `;
 
     const blogSection = document.querySelector('.blog-section');
     if (blogSection) {
@@ -112,3 +112,4 @@ const displaySearchResults = (results, container) => {
 document.addEventListener('DOMContentLoaded', () => {
     createSearchUI();
 });
+
