@@ -37,7 +37,7 @@ const createSearchUI = () => {
 
     // Close search results when clicking outside
     document.addEventListener('click', (e) => {
-        if (!searchContainer.contains(e.target)) {
+       if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
             searchResults.style.display = 'none';
         }
     });
@@ -96,3 +96,4 @@ const displaySearchResults = (results, container) => {
 // Initialize search functionality
 
 document.addEventListener('DOMContentLoaded', createSearchUI);
+
