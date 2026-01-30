@@ -12,7 +12,7 @@
 // UPDATE THESE WITH YOUR BREVO CREDENTIALS
 const BREVO_CONFIG = {
     API_KEY: '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,  // Get from Brevo Settings → API
-    LIST_ID: 5,  // Get from Brevo Contacts → Lists → Your List ID (just the number)
+    LIST_ID: #5,  // Get from Brevo Contacts → Lists → Your List ID (just the number)
     API_ENDPOINT: 'https://api.brevo.com/v3/contacts',
 };
 
@@ -216,4 +216,5 @@ if (!document.querySelector('style[data-brevo-styles]')) {
 }
 
 console.log('✓ Brevo integration script ready');
+
 
