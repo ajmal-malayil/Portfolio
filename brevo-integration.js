@@ -9,30 +9,22 @@
  */
 
 // ==================== CONFIGURATION ====================
-// Load from Cloudflare environment variables or use template values
-// For Cloudflare Pages/Workers, these are set in the Cloudflare Dashboard
-// For local testing, update these values in the .env file
-const getBrevoConfig = async () => {
-    // Try to load from Cloudflare environment (if available)
-    if (typeof CF !== 'undefined' && CF.BREVO_API_KEY) {
-        return {
-            API_KEY: CF.BREVO_API_KEY,
-            LIST_ID: CF.BREVO_LIST_ID,
-            API_ENDPOINT: 'https://api.brevo.com/v3/contacts',
-        };
-    }
-    
-    // Fallback to template (for GitHub, will show warning)
-    return {
-        API_KEY: 'YOUR_API_KEY_HERE',  // Set in Cloudflare dashboard
-        LIST_ID: 0,  // Set in Cloudflare dashboard
-        API_ENDPOINT: 'https://api.brevo.com/v3/contacts',
-    };
+// NOTE: For Cloudflare Pages (static site), environment variables are managed in Cloudflare dashboard
+// For local testing, update these values temporarily, then revert before pushing to GitHub
+const BREVO_CONFIG = {
+    API_KEY: 'YOUR_API_KEY_HERE',  // Get from Cloudflare dashboard
+    LIST_ID: 0,  // Get from Cloudflare dashboard
+    API_ENDPOINT: 'https://api.brevo.com/v3/contacts',
 };
-
+    
 // ==================== INITIALIZATION ====================
 document.addEventListener('DOMContentLoaded', function() {
     console.log('✓ Brevo integration loaded');
+
+// Check if properly configured
+    if (BREVO_CONFIG.API_KEY === 'YOUR_API_KEY_HERE') {
+        console.warn('⚠ Brevo API key not configured. Newsletter forms will not work.');
+    }
     
     // Find all newsletter forms
     const newsletterForms = document.querySelectorAll('.newsletter-form');
@@ -230,6 +222,7 @@ if (!document.querySelector('style[data-brevo-styles]')) {
 }
 
 console.log('✓ Brevo integration script ready');
+
 
 
 
