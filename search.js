@@ -36,6 +36,9 @@ const searchContainer = document.createElement('div');
 
     let debounceTimer;
 
+// Only add event listener if search input exists
+    if (searchInput) {
+    
     searchInput.addEventListener('input', (e) => {
         clearTimeout(debounceTimer);
         debounceTimer = setTimeout(() => {
@@ -49,6 +52,7 @@ const searchContainer = document.createElement('div');
             displaySearchResults(results, searchResults);
         }, 300);
     });
+}
 
     // Close search results when clicking outside
     document.addEventListener('click', (e) => {
@@ -112,4 +116,5 @@ const displaySearchResults = (results, container) => {
 document.addEventListener('DOMContentLoaded', () => {
     createSearchUI();
 });
+
 
