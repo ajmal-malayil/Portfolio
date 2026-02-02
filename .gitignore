@@ -1,0 +1,60 @@
+# Environment Variables (IMPORTANT: Never commit API keys!)
+.env
+.env.local
+.env.*.local
+
+# Brevo Configuration with credentials
+js/brevo-integration-credentials.js
+js/brevo-config.local.js
+
+# Node modules
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# IDE and Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Build and dist files
+dist/
+build/
+*.min.js
+*.min.css
+
+# Backup files
+*.backup
+*.bak
+*~
+*.tmp
+
+# Sensitive data backups
+*-backup.js
+*-config-backup.js
+credentials-backup.txt
+
+# Cache files
+.cache/
+*.cache
+
+# Temporary files
+temp/
+tmp/
+*.temp
+
+# Logs
+logs/
+*.log
