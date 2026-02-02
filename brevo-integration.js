@@ -9,21 +9,20 @@
  */
 
 // ==================== CONFIGURATION ====================
-// NOTE: For Cloudflare Pages (static site), environment variables are managed in Cloudflare dashboard
-// For local testing, update these values temporarily, then revert before pushing to GitHub
+// Uses Cloudflare Worker as secure proxy for API calls
+// The Worker handles the actual Brevo API key (never exposed in frontend code)
 const BREVO_CONFIG = {
-    API_KEY: 'YOUR_API_KEY_HERE',  // Get from Cloudflare dashboard
-    LIST_ID: 0,  // Get from Cloudflare dashboard
+    WORKER_URL: 'https://brevo-proxy.ajmalmalayil896.workers.dev',  // Replace with your Worker URL
     API_ENDPOINT: 'https://api.brevo.com/v3/contacts',
 };
-    
+
 // ==================== INITIALIZATION ====================
 document.addEventListener('DOMContentLoaded', function() {
     console.log('✓ Brevo integration loaded');
-
-// Check if properly configured
-    if (BREVO_CONFIG.API_KEY === 'YOUR_API_KEY_HERE') {
-        console.warn('⚠ Brevo API key not configured. Newsletter forms will not work.');
+    
+    // Check if properly configured
+    if (!BREVO_CONFIG.WORKER_URL || BREVO_CONFIG.WORKER_URL.includes('YOUR_USERNAME')) {
+        console.warn('⚠ Brevo Worker URL not configured. Newsletter forms will not work.');
     }
     
     // Find all newsletter forms
@@ -63,12 +62,12 @@ async function handleNewsletterSubmit(e) {
     }
     
     // Check configuration
-    if (BREVO_CONFIG.API_KEY === 'YOUR_API_KEY_HERE') {
+    if (!BREVO_CONFIG.WORKER_URL || BREVO_CONFIG.WORKER_URL.includes('YOUR_USERNAME')) {
         showMessage(this, 
             '⚠ Newsletter not configured yet. Contact the site owner.',
             'error'
         );
-        console.error('❌ Brevo API key not configured');
+        console.error('❌ Brevo Worker URL not configured');
         return;
     }
     
@@ -79,13 +78,12 @@ async function handleNewsletterSubmit(e) {
     button.textContent = 'Subscribing...';
     
     try {
-        // Send to Brevo
-        const response = await fetch(BREVO_CONFIG.API_ENDPOINT, {
+        // Send to Brevo via Cloudflare Worker (keeps API key secure)
+        const response = await fetch(BREVO_CONFIG.WORKER_URL, {
             method: 'POST',
             headers: {
                 'accept': 'application/json',
                 'content-type': 'application/json',
-                'api-key': BREVO_CONFIG.API_KEY,
             },
             body: JSON.stringify({
                 email: email,
@@ -222,7 +220,3 @@ if (!document.querySelector('style[data-brevo-styles]')) {
 }
 
 console.log('✓ Brevo integration script ready');
-
-
-
-
