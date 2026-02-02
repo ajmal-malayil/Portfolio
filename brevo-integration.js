@@ -9,11 +9,25 @@
  */
 
 // ==================== CONFIGURATION ====================
-// UPDATE THESE WITH YOUR BREVO CREDENTIALS
-const BREVO_CONFIG = {
-    API_KEY: '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,  // Get from Brevo Settings → API
-    LIST_ID: #5,  // Get from Brevo Contacts → Lists → Your List ID (just the number)
-    API_ENDPOINT: 'https://api.brevo.com/v3/contacts',
+// Load from Cloudflare environment variables or use template values
+// For Cloudflare Pages/Workers, these are set in the Cloudflare Dashboard
+// For local testing, update these values in the .env file
+const getBrevoConfig = async () => {
+    // Try to load from Cloudflare environment (if available)
+    if (typeof CF !== 'undefined' && CF.BREVO_API_KEY) {
+        return {
+            API_KEY: CF.BREVO_API_KEY,
+            LIST_ID: CF.BREVO_LIST_ID,
+            API_ENDPOINT: 'https://api.brevo.com/v3/contacts',
+        };
+    }
+    
+    // Fallback to template (for GitHub, will show warning)
+    return {
+        API_KEY: 'YOUR_API_KEY_HERE',  // Set in Cloudflare dashboard
+        LIST_ID: 0,  // Set in Cloudflare dashboard
+        API_ENDPOINT: 'https://api.brevo.com/v3/contacts',
+    };
 };
 
 // ==================== INITIALIZATION ====================
@@ -216,5 +230,6 @@ if (!document.querySelector('style[data-brevo-styles]')) {
 }
 
 console.log('✓ Brevo integration script ready');
+
 
 
