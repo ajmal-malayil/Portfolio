@@ -38,21 +38,20 @@ const searchContainer = document.createElement('div');
 
 // Only add event listener if search input exists
     if (searchInput) {
-    
-    searchInput.addEventListener('input', (e) => {
-        clearTimeout(debounceTimer);
-        debounceTimer = setTimeout(() => {
-            const query = e.target.value;
-            if (query.length < 2) {
-                searchResults.style.display = 'none';
-                return;
-            }
+        searchInput.addEventListener('input', (e) => {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                const query = e.target.value;
+                if (query.length < 2) {
+                    if (searchResults) searchResults.style.display = 'none';
+                    return;
+                }
 
-            const results = searchBlog(query);
-            displaySearchResults(results, searchResults);
-        }, 300);
-    });
-}
+                const results = searchBlog(query);
+                displaySearchResults(results, searchResults);
+            }, 300);
+        });
+    }
 
     // Close search results when clicking outside
     document.addEventListener('click', (e) => {
@@ -116,5 +115,6 @@ const displaySearchResults = (results, container) => {
 document.addEventListener('DOMContentLoaded', () => {
     createSearchUI();
 });
+
 
 
